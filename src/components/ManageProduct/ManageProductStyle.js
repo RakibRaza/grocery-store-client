@@ -20,12 +20,16 @@ export const useStyles = makeStyles((theme) => ({
     color: "#fff",
     borderRadius: theme.spacing(0.8),
     padding: theme.spacing(0.2),
-    marginRight: theme.spacing(1),
   },
   tableContainer: {
     marginBottom: theme.spacing(6),
   },
   table: {
     borderRadius: theme.spacing(1.5),
+  },
+  "@media (min-width: 530px)": {
+    edit: {
+      marginRight: theme.spacing(1),
+    },
   },
 }));

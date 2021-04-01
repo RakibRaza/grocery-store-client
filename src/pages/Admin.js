@@ -9,16 +9,11 @@ import ManageProduct from "../components/ManageProduct/ManageProduct";
 import NavBar from "../components/NavBar/NavBar";
 import EditProduct from "../components/EditProduct/EditProduct";
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    minHeight: "calc(100vh - 64px)",
-  },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
     background: "#203D37",
-    width: "200px",
-    color: "#fff",
 
+    color: "#fff",
     "& .MuiTab-wrapper": {
       flexDirection: "row",
     },
@@ -26,6 +21,15 @@ const useStyles = makeStyles((theme) => ({
   tabPanel: {
     background: "#F4FCFB",
     flexGrow: "1",
+  },
+  "@media (min-width: 780px)": {
+    root: {
+      display: "flex",
+      minHeight: "calc(100vh - 64px)",
+    },
+    tabs: {
+      width: "200px",
+    },
   },
 }));
 function TabPanel(props) {

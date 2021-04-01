@@ -53,6 +53,7 @@ const AddProduct = () => {
         );
         if (res.data) {
           setAlert({ type: "success", message: "Product Saved Successfully." });
+          setImage("");
         }
       } catch (error) {
         console.error(error.message);
