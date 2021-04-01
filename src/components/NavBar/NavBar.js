@@ -62,9 +62,7 @@ const NavBar = () => {
             <Button component={Link} to="/admin">
               Admin
             </Button>
-            <Button component={Link} to="/about">
-              Deals
-            </Button>
+            <Button>Deals</Button>
             <Box ml={6}>
               {currentUserInfo ? (
                 <Button
@@ -97,19 +95,38 @@ const NavBar = () => {
             </Box>
             <Drawer open={open} onClose={() => setOpen(false)}>
               <List disablePadding className={classes.drawer}>
-                <ListItem button>
-                  <ListItemText primary="News" />
+                <ListItem button component={Link} to="/">
+                  <ListItemText primary="Home" />
+                </ListItem>
+                <ListItem button component={Link} to="/orders">
+                  <ListItemText primary="Orders" />
+                </ListItem>
+                <ListItem button component={Link} to="/admin">
+                  <ListItemText primary="Admin" />
                 </ListItem>
                 <ListItem button>
-                  <ListItemText primary="Destination" />
-                </ListItem>
-                <ListItem button>
-                  <ListItemText primary="Blog" />
-                </ListItem>
-                <ListItem button>
-                  <ListItemText primary="Contact" />
+                  <ListItemText primary="Deals" />
                 </ListItem>
               </List>
+              {currentUserInfo ? (
+                <Button
+                  onClick={handleLogOut}
+                  color="primary"
+                  variant="contained"
+                >
+                  Logout
+                </Button>
+              ) : (
+                <Button
+                  component={Link}
+                  to="/login"
+                  color="primary"
+                  variant="contained"
+                >
+                  Login
+                </Button>
+              )}
+              <Button>{currentUserInfo?.displayName}</Button>
             </Drawer>
           </Hidden>
         </Toolbar>

@@ -1,44 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+import {
+  Box,
+  Container,
+  Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  Paper,
+  TableRow,
+} from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { Box, Container, Typography } from "@material-ui/core";
-const useStyles = makeStyles((theme) => ({
-  title: {
-    borderRadius: "0px",
-    "& h5": {
-      fontWeight: "bold",
-    },
-  },
-  delete: {
-    cursor: "pointer",
-    background: "#FF444A",
-    color: "#fff",
-    borderRadius: theme.spacing(0.8),
-    padding: theme.spacing(0.1),
-  },
-  edit: {
-    cursor: "pointer",
-    background: "#3BC83B",
-    color: "#fff",
-    borderRadius: theme.spacing(0.8),
-    padding: theme.spacing(0.2),
-    marginRight: theme.spacing(1),
-  },
-  tableContainer: {
-    marginBottom: theme.spacing(6),
-  },
-  table: {
-    borderRadius: theme.spacing(1.5),
-  },
-}));
+import { useStyles } from "./ManageProductStyle";
 
 export default function BasicTable() {
   const classes = useStyles();
@@ -50,6 +25,7 @@ export default function BasicTable() {
       .then((data) => setProducts(data))
       .catch((error) => console.log(error));
   }, []);
+
   const handleDelete = (id) => {
     fetch(`https://pwr-grocery-store-bd.herokuapp.com/deletePproduct/${id}`, {
       method: "DELETE",
@@ -62,6 +38,7 @@ export default function BasicTable() {
       })
       .catch((error) => console.error(error.message));
   };
+
   return (
     <>
       <Paper className={classes.title} component={Box} p={2} mb={3}>

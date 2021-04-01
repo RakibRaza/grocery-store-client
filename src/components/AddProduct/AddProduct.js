@@ -51,13 +51,15 @@ const AddProduct = () => {
             image,
           }
         );
+        if (res.data) {
+          setAlert({ type: "success", message: "Product Saved Successfully." });
+        }
       } catch (error) {
         console.error(error.message);
       }
       reset();
-      setAlert({ type: "success", message: "Product Saved Successfully." });
     } else {
-      setAlert({ type: "error", message: "Image Uploding....." });
+      setAlert({ type: "error", message: "Image Can't Upload." });
     }
   };
   const handleImageUpload = async (event) => {

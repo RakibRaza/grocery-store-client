@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Box from "@material-ui/core/Box";
+import { Tabs, Tab, Box } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import EditIcon from "@material-ui/icons/Edit";
@@ -27,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabPanel: {
     background: "#F4FCFB",
+    flexGrow: "1",
   },
 }));
 function TabPanel(props) {
@@ -77,28 +76,13 @@ const Admin = () => {
           <Tab icon={<AddIcon />} label="Add Product" {...a11yProps(1)} />
           <Tab icon={<EditIcon />} label="Edit Product" {...a11yProps(2)} />
         </Tabs>
-        <TabPanel
-          className={classes.tabPanel}
-          value={value}
-          index={0}
-          style={{ flexGrow: "1" }}
-        >
+        <TabPanel className={classes.tabPanel} value={value} index={0}>
           <ManageProduct />
         </TabPanel>
-        <TabPanel
-          className={classes.tabPanel}
-          value={value}
-          index={1}
-          style={{ flexGrow: "1" }}
-        >
+        <TabPanel className={classes.tabPanel} value={value} index={1}>
           <AddProduct />
         </TabPanel>
-        <TabPanel
-          style={{ flexGrow: "1" }}
-          className={classes.tabPanel}
-          value={value}
-          index={2}
-        >
+        <TabPanel className={classes.tabPanel} value={value} index={2}>
           <EditProduct />
         </TabPanel>
       </div>
