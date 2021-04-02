@@ -37,11 +37,7 @@ const ScrollToTop = ({ showBelow }) => {
   return (
     <div>
       {show && (
-        <Fab
-          onClick={handleClick}
-          color="secondary"
-          className={classes.backHome}
-        >
+        <Fab onClick={handleClick} color="primary" className={classes.backHome}>
           <ArrowUpwardIcon />
         </Fab>
       )}

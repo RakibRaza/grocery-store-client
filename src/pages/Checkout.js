@@ -53,7 +53,7 @@ const Checkout = () => {
       .catch((error) => console.error(error));
   }, [id]);
 
-  const handleClick = async () => {
+  const handleCheckout = async () => {
     try {
       const res = await axios.post(
         "https://pwr-grocery-store-bd.herokuapp.com/placeOrders",
@@ -133,7 +133,7 @@ const Checkout = () => {
         <Box mt={4} align="right">
           <Button
             startIcon={<AddShoppingCartIcon />}
-            onClick={handleClick}
+            onClick={handleCheckout}
             variant="contained"
             color="primary"
             size="large"

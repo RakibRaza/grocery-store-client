@@ -1,11 +1,4 @@
 import {
-  Box,
-  Button,
-  Container,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
-import {
   Paper,
   Table,
   TableBody,
@@ -13,6 +6,11 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Box,
+  Button,
+  Container,
+  makeStyles,
+  Typography,
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar/NavBar";
@@ -124,7 +122,6 @@ const Orders = () => {
                         <TableCell>
                           <Typography>{time}</Typography>
                         </TableCell>
-
                         <TableCell>
                           <Typography>
                             {name} - {wight}
@@ -140,7 +137,6 @@ const Orders = () => {
                         <TableCell align="right">
                           <Typography variant="h6">1</Typography>
                         </TableCell>
-
                         <TableCell align="right">
                           <Typography variant="h6">${price}</Typography>
                         </TableCell>

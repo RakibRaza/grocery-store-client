@@ -7,12 +7,9 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-
 import React, { useState } from "react";
-
 import { NavLink, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
 import { useAuthContext } from "../context/AuthContext";
 import NavBar from "../components/NavBar/NavBar";
 import { Alert } from "@material-ui/lab";
